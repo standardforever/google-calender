@@ -25,7 +25,7 @@ python -m pip install --upgrade pip
 pip install django
 # Install the required dependencies
 pip install -r requirements.txt
-
+python -m pip install Django
 # Run the migrations
 python manage.py migrate
 
