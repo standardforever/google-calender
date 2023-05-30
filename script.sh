@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env bash
 
 # Define the desired Python version
 PYTHON_VERSION="3.8.12"
@@ -15,6 +15,10 @@ eval "$(pyenv virtualenv-init -)"
 pyenv install "$PYTHON_VERSION"
 pyenv global "$PYTHON_VERSION"
 
+# Create and activate a virtual environment
+python -m venv venv
+source venv/bin/activate
+
 # Upgrade pip
 python -m pip install --upgrade pip
 
@@ -24,3 +28,5 @@ pip install -r requirements.txt
 # Run the migrations
 python manage.py migrate
 
+# Run the Django server
+python manage.py runserver
