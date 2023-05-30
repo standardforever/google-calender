@@ -16,12 +16,13 @@ pyenv install "$PYTHON_VERSION"
 pyenv global "$PYTHON_VERSION"
 
 # Create and activate a virtual environment
-python -m venv venv
-source venv/bin/activate
+# python -m venv venv
+# source venv/bin/activate
 
 # Upgrade pip
 python -m pip install --upgrade pip
 
+pip install django
 # Install the required dependencies
 pip install -r requirements.txt
 
