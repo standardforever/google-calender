@@ -22,10 +22,10 @@ pyenv global "$PYTHON_VERSION"
 # Upgrade pip
 python -m pip install --upgrade pip
 
-pip install django
+pip install --target . django
 # Install the required dependencies
 pip install -r requirements.txt
-python -m pip install Django
+python -m pip install  --target . django
 # Run the migrations
 python manage.py migrate
 
