@@ -1,5 +1,26 @@
-#!/usr/bin/env bash
-pip install --upgrade pip
+#!/usr/bin/env bash
+
+# Define the desired Python version
+PYTHON_VERSION="3.8.12"
+
+# Install pyenv
+curl https://pyenv.run | bash
+
+# Set up pyenv in the current shell
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+# Install the desired Python version
+pyenv install "$PYTHON_VERSION"
+pyenv global "$PYTHON_VERSION"
+
+# Upgrade pip
+python -m pip install --upgrade pip
+
+# Install the required dependencies
 pip install -r requirements.txt
 
+# Run the migrations
 python manage.py migrate
+
