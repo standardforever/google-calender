@@ -28,5 +28,5 @@ pip install -r requirements.txt
 # Run the migrations
 python manage.py migrate
 
-# Run the Django server
-python manage.py runserver
+# # Run the Django server
+# python manage.py runserver
